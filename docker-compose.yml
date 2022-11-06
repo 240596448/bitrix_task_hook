@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  bitrix-hook:
+    image: bitrix-hook-translator
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: bitrix-hook-translator
+    restart: unless-stopped
+    env_file:
+      - .env.list
+    ports:
+      - "5002:5000"
+
+
+
+
+
